@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python3
 # coding=UTF-8
 """
@@ -14,6 +15,7 @@ Options include:
  - Total number of features are reported and compared with the archives.
 """
 
+
 __version__ = "1.5.3"
 
 
@@ -27,11 +29,13 @@ import sys
 import time
 import zipfile
 
+
 from subprocess import Popen,call,PIPE
 
 sys.path.append("../python/")   # add the library
 sys.path.append("python/")      # add the library
 import bulk_extractor_reader
+
 
 
 CORP_ENV     = "DOMEX_CORP"     # default environment variable where corpus is located
@@ -47,6 +51,7 @@ IMAGE_PATH = {IMAGE_UBNIST1:"nps-2009-ubnist1/ubnist1.gen3.raw",
               IMAGE_EMAILS:"nps-2010-emails/nps-2010-emails.E01",
               IMAGE_DOMEXUSERS:"nps-2009-domexusers/nps-2009-domexusers.E01"}
 
+
 DEFAULT_INFILE = IMAGE_UBNIST1
 FAST_INFILE    = IMAGE_EMAILS
 FULL_INFILE    = IMAGE_DOMEXUSERS
@@ -54,6 +59,7 @@ exe            = "src/bulk_extractor"
 
 if not os.path.exists(exe):
     exe = "../src/bulk_extractor"
+
 
 BOM = codecs.BOM_UTF8.decode('utf-8')
 
