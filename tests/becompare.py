@@ -13,6 +13,7 @@ The analysis consists of:
 
 """
 
+
 from subprocess import Popen,call
 import os
 import glob
@@ -24,6 +25,7 @@ except ImportError:
 
 __version__ = "2.0.0"
 
+
 def validate_report(report):
     if not os.path.isdir(report):
         raise FileNotFoundError(f"{report} is not a directory")
@@ -31,6 +33,7 @@ def validate_report(report):
     if not os.path.isfile(xmlfile):
         raise FileNotFoundError(xmlfile)
     tree = XML(open(xmlfile,"r").read())
+
 
 def sort_report(report):
     sorted_file = os.path.join(report,".sorted")
@@ -41,8 +44,10 @@ def sort_report(report):
         open(fn,"w").write("\n".join(sorted(lines)))
     open(sorted_file,"w").close()
 
+
 def generate_report(report1,report2):
     call(['diff','--recursive','--side-by-side',report1,report2])
+
 
 if __name__=="__main__":
     import argparse
