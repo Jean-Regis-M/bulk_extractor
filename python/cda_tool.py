@@ -28,12 +28,14 @@ import os,sys,re,collections
 
 # add paths in an attempt to find our modules
 if os.getenv("DOMEX_HOME"):
+    
     sys.path.append(os.getenv("DOMEX_HOME") + "/src/lib/") # add the library
 sys.path.append("../lib/")      # add the library
 
 import ttable, bulk_extractor_reader
 
 class Correlator:
+    
     """The main correlator class.
     Correlates features on different disks.
     Python does not automatically uniquify all strings, so we do.
@@ -61,6 +63,7 @@ class Correlator:
                 line = line.decode('utf-8')
             m = bulk_extractor_reader.get_property_line(line)
             if m:
+                
                 if m[0]=='Filename':
                     drivename = m[1]
                     self.drives.add(drivename)
