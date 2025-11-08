@@ -6,12 +6,14 @@ The user can then grade the report. A second pass then reports the accuracy of t
 from bulk_extractor_reader import BulkReport,is_comment_line
 import random,re
 
+
 def get_lines_array(f):
     """Returns an array of integers corresponding to each line in the feature file"""
     line_number = 0
     line_numbers = []
     if args.pattern:
         pattern = args.pattern.encode('utf-8')
+        
     else:
         pattern = None
     if args.xpattern:
